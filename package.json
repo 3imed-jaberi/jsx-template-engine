@@ -1,8 +1,7 @@
 {
   "name": "jsx-template-engine",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Agnostic jsx template engine.",
-  "main": "dist/index.js",
   "types": "dist/",
   "files": [
     "dist"
@@ -11,10 +10,10 @@
     "lint": "eslint . --ext .ts",
     "pretest": "rimraf dist",
     "test": "mocha",
-    "build": "tsc -d",
+    "build": "tsc",
     "precoverage": "rimraf coverage .nyc_output",
     "coverage": "nyc npm run test",
-    "postcoverage": "npm run build",
+    "postcoverage": "npm run build tsconfig.tsbuildinfo",
     "preci": "npm run lint",
     "ci": "npm run coverage",
     "postversion": "git push && git push --tags",
