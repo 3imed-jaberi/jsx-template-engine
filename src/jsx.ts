@@ -52,7 +52,8 @@ function buildAttributes(attributes: Attributes): string {
 jsx.render = function render (node: Node): string {
   if (!node) return ''
 
-  if (typeof node === "string") return node
+  if (!node.nodeName) return node as any
+  // if (typeof node === "string") return node
 
   if (typeof node.nodeName === "function") {
     return render(

@@ -78,13 +78,23 @@ describe('', () => {
 
   describe('should render all custom components', async () => {
     it('* custom component', async () => {
-      const jsxTag = await jsx.renderFile(join(__dirname, 'index.jsx'))
+      const path = join(__dirname, './index.jsx')
+      const jsxTag = await jsx.render(jsx.importComponent(path), {}, path)
       expect(jsxTag).to.be.equal(`<div><div><div></div></div></div>`)
     })
 
     it('* children attribute with custom component', async () => {
       const jsxTag = await jsx.render(`const View = ({children}) => <div>{children}</div>; export default () => <View children={'Hello'}></View>`)
       expect(jsxTag).to.be.equal(`<div>Hello</div>`)
+    })
+
+    it('* nested children', async () => {
+      const jsxTag = await jsx.render(`
+        const View = ({children}) => <div>{children}</div>;
+        const ScrollView = ({children}) => <div>{children}</div>;
+        export default () => <><View children={'Hello'} /><ScrollView><h1>World</h1></ScrollView></>
+      `)
+      expect(jsxTag).to.be.equal(`<div>Hello</div><div><h1>World</h1></div>`)
     })
 
     it('* string component with out tag', async () => {
@@ -100,6 +110,11 @@ describe('', () => {
     it('* fragments with child(s)', async () => {
       const jsxTag = await jsx.render(`module.exports = () => <><div></div></>`)
       expect(jsxTag).to.be.equal(`<div></div>`)
+    })
+
+    it('* empty text', async () => {
+      const jsxTag = await jsx.render(`module.exports = () => ''`)
+      expect(jsxTag).to.be.equal(``)
     })
   })
 
