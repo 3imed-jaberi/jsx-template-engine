@@ -138,7 +138,7 @@ function vmRuntime(code: string, path?: string) {
 }
 
 /**
- * a jsxEgine wrapper provide an implicit file reader.
+ * a jsxEngine wrapper provide an implicit file reader.
  *
  * @api public
  */
