@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "ES2018",
+    "module": "CommonJS",
+    "declaration": true,
+    "outDir": "dist",
+    "rootDir": "src",
+    "incremental": true,
+    "strict": true,
+    "moduleResolution": "Node",
+    "typeRoots": [
+      "./typings",
+      "./node_modules/@types/"
+    ],
+    "esModuleInterop": true,
+    "noImplicitAny": false,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  },
+  "exclude": [
+    "test/**"
+  ]
+}
