@@ -35,7 +35,7 @@ const BABEL_OPTIONS = {
     ]
   ]
 }
-const SUPPORTED_EXTENSIONS = [".jsx", ".js", ""]
+const SUPPORTED_EXTENSIONS = ["jsx", "js", ""]
 
 /**
  * a helper fuction to check any value is function.
@@ -52,7 +52,8 @@ function isFunction (value: unknown) {
  * @api private
  */
 function fsFindFile(path: string): string {
-  const fileExtension = pathExtname(path)
+  const fileExtension = pathExtname(path).slice(1)
+  
   if (!SUPPORTED_EXTENSIONS.includes(fileExtension)) {
     throw new Error('please use .jsx or .js as extension for your file.')
   }
@@ -143,7 +144,7 @@ function vmRuntime(code: string, path?: string) {
  * @api public
  */
 export async function renderFile(path: string, payload: Props = {}): Promise<string> {
-  const code = (await fsReadFile(path)).toString()
+  const code = (await fsReadFile(fsFindFile(path))).toString()
   return jsxEngine(code, payload, path)
 }
 
