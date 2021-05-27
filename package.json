@@ -1,0 +1,73 @@
+{
+  "name": "jsx-template-engine",
+  "version": "0.0.0",
+  "description": "Agnostic jsx template engine.",
+  "main": "dist/index.js",
+  "types": "dist/",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "lint": "eslint . --ext .ts",
+    "pretest": "rimraf dist",
+    "test": "mocha",
+    "build": "tsc -d",
+    "precoverage": "rimraf coverage .nyc_output",
+    "coverage": "nyc npm run test",
+    "postcoverage": "npm run build",
+    "preci": "npm run lint",
+    "ci": "npm run coverage",
+    "postversion": "git push && git push --tags",
+    "prepublishOnly": "npm run ci",
+    "preversion": "npm run ci"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/3imed-jaberi/jsx-template-engine.git"
+  },
+  "keywords": [
+    "jsx",
+    "tempalte-engine",
+    "jsx-template-engine",
+    "jsx-engine",
+    "pragma",
+    "h",
+    "react",
+    "preact",
+    "agnostic"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "imed jaberi",
+    "email": "imed-jaberi@outlook.com",
+    "url": "https://www.3imed-jaberi.com"
+  },
+  "dependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/plugin-transform-modules-commonjs": "^7.9.6",
+    "@babel/plugin-transform-react-jsx": "^7.9.4",
+    "add-px-to-style": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/babel__core": "^7.1.14",
+    "@types/chai": "^4.2.18",
+    "@types/mocha": "^8.2.2",
+    "@types/node": "^15.6.1",
+    "@typescript-eslint/eslint-plugin": "^4.25.0",
+    "@typescript-eslint/parser": "^4.25.0",
+    "chai": "^4.3.4",
+    "eslint": "^7.27.0",
+    "mocha": "^8.4.0",
+    "nyc": "^15.1.0",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.3.2"
+  },
+  "engines": {
+    "node": ">= 14"
+  },
+  "bugs": {
+    "url": "https://github.com/3imed-jaberi/jsx-template-engine/issues"
+  },
+  "homepage": "https://github.com/3imed-jaberi/jsx-template-engine#readme"
+}
