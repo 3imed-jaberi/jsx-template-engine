@@ -33,9 +33,9 @@
 
 ## `Features`
 
-- 🥞 &nbsp; Inspired from [jsx-engine][].
+- 🥞 &nbsp; Inspired from `jsx-engine`.
 - 🔥 &nbsp; Blaze, amiable and lightweight jsx pragma.
-- 💅🏻 &nbsp; Based on [babel-core][].
+- 💅🏻 &nbsp; Based on `babel-core`.
 - ✨ &nbsp; Agnostic solution for Node.js server side frameworks.
 - 🎉 &nbsp; TypeScript support.
 
@@ -56,17 +56,20 @@ This is a practical example of how to use.
 import jsx from "jsx-template-engine";
 
 (async () => {
-  // render with file.
-  const jsxTag1 = await jsx.renderFile("./home.jsx", {
-    title: "welcome to home page",
-  });
-
-  // render with code.
-  const jsxTag2 = await jsx.render("export default () => <div>100</div>");
+  const htmlString = await jsx.render("export default () => <div>100</div>");
+  // <div>100</div>
 })();
 ```
 
-## `API` 🚧
+## `API`
+
+### `importComponent(path: string): string`:
+
+a sync method to import jsx component from a file.
+
+### `render/jsxEngine (code: string, payload: Props =, path?: string)`:
+
+an async method to parse the the jsx code string to html string where you can pass props as payload param and a path param for used and compose files.
 
 #### License
 
