@@ -127,5 +127,6 @@ function importComponent(path: string) {
   return fileContent
 }
 
+export * from './jsx'
 export default { render: jsxEngine, jsxEngine, importComponent }
 module.exports = { render: jsxEngine, jsxEngine, importComponent }

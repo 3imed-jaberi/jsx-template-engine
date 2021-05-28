@@ -1,6 +1,6 @@
 import addPx from "add-px-to-style"
 
-const Fragment = Symbol("jsx.Fragment")
+export const Fragment = Symbol("jsx.Fragment")
 
 export type Props = {
   [key: string]: any
@@ -97,8 +97,7 @@ jsx.render = function render (node: Node): string {
   return tree
 }
 
-export { jsx as default, Fragment }
+export default jsx
 
 module.exports = jsx
-module.exports.default = jsx
 module.exports.Fragment = Fragment
