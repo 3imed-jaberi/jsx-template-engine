@@ -1,5 +1,10 @@
 # CHANGE LOG
 
+### 1.0.0 (28 May 2021)
+
+- fix version (we have breaking changes)
+- imporve the docs
+
 ### 0.5.0 (28 May 2021)
 
 - fix types exports
