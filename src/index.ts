@@ -118,7 +118,6 @@ async function jsxEngine(code: string, payload: Props = {}, path?: string): Prom
 function importComponent(path: string) {
   // resolve the dot-env file path.
   const filePath = pathResolve(process.cwd(), path)
-  console.log(filePath);
   
   // extract the file content.
   const fileContent = fsReadFileSync(filePath, { encoding: "utf8" }).toString()
