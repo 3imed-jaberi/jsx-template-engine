@@ -1,6 +1,6 @@
 {
   "name": "jsx-template-engine",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Agnostic jsx template engine.",
   "types": "dist/",
   "files": [
